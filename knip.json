@@ -1,0 +1,20 @@
+{
+  "entry": ["src/**/*.ts", "shannon.mjs"],
+  "project": ["src/**/package.json", "./package.json"],
+  "ignore": [
+    "node_modules/**",
+    "dist/**",
+    "coverage/**",
+    "docs/**",
+    "**/*.test.ts",
+    "**/*.test.js",
+    "**/*.spec.ts",
+    "**/*.spec.js"
+  ],
+  "ignoreDependencies": {
+    "husky": true,
+    "eslint": true,
+    "prettier": true,
+    "@typescript-eslint/*": true
+  }
+}

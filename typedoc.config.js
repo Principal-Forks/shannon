@@ -1,0 +1,17 @@
+import { defineConfig } from 'typedoc';
+
+export default defineConfig({
+  entryPoints: ["./src/**/*.ts", "./shannon.mjs"],
+  out: "./docs",
+  theme: "default",
+  includeVersion: true,
+  excludeExternals: true,
+  excludePrivate: true,
+  excludeProtected: true,
+  disableSources: false,
+  sourceLinkTemplate: "https://github.com/Principal-Forks/shannon/blob/{gitRevision}/{path}#L{line}",
+  gitRevision: "main",
+  readme: "none",
+  name: "Shannon Penetration Testing Tool",
+  tsconfig: "./tsconfig.json"
+});

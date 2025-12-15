@@ -1,0 +1,36 @@
+# Ignore files that shouldn't be formatted
+node_modules/
+dist/
+build/
+coverage/
+*.log
+*.lock
+.DS_Store
+.vscode/
+.idea/
+
+# Benchmark results (too many files)
+xben-benchmark-results/
+
+# Generated files and artifacts
+audit-logs/
+deliverables/
+results.json
+
+# Documentation and config files that have specific formatting
+*.md
+CLAUDE.md
+README.md
+SHANNON-PRO.md
+COVERAGE.md
+LICENSE
+.github/
+.husky/
+.principal-views/
+.privurc.yaml
+
+# MCP server files
+mcp-server/
+
+# Scripts with specific formatting requirements
+scripts/export-metrics.js

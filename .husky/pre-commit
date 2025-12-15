@@ -1,2 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
 # Run principal view linting on staged .principal-views files
 npx @principal-ai/principal-view-cli lint --quiet
+
+# Run quality checks on committed code (allow failures for now)
+npm run lint:check || true
