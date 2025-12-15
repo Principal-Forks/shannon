@@ -4,7 +4,8 @@
   "type": "module",
   "main": "shannon.mjs",
   "scripts": {
-    "start": "./shannon.mjs"
+    "start": "./shannon.mjs",
+    "prepare": "husky"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.1.0",
@@ -21,5 +22,8 @@
   },
   "bin": {
     "shannon": "./shannon.mjs"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
   }
 }

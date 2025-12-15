@@ -1,0 +1,270 @@
+{
+  "pv": {
+    "name": "Shannon Architecture",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "cli",
+      "type": "text",
+      "x": 340,
+      "y": 70,
+      "width": 120,
+      "height": 60,
+      "text": "# CLI Interface\n\nMain entry point and orchestration layer"
+    },
+    {
+      "id": "config",
+      "type": "text",
+      "x": 40,
+      "y": 270,
+      "width": 120,
+      "height": 60,
+      "text": "# Configuration\n\nYAML config parsing and validation"
+    },
+    {
+      "id": "session",
+      "type": "text",
+      "x": 640,
+      "y": 470,
+      "width": 120,
+      "height": 60,
+      "text": "# Session Manager\n\nPersistent state and agent lifecycle"
+    },
+    {
+      "id": "pipeline",
+      "type": "text",
+      "x": 440,
+      "y": 470,
+      "width": 120,
+      "height": 60,
+      "text": "# Pipeline\n\nFive-phase testing workflow"
+    },
+    {
+      "id": "checkpoint",
+      "type": "text",
+      "x": 490,
+      "y": 670,
+      "width": 120,
+      "height": 60,
+      "text": "# Checkpoint\n\nGit-based state management"
+    },
+    {
+      "id": "ai",
+      "type": "text",
+      "x": 90,
+      "y": 670,
+      "width": 120,
+      "height": 60,
+      "text": "# AI Engine\n\nClaude SDK integration"
+    },
+    {
+      "id": "prompts",
+      "type": "text",
+      "x": 40,
+      "y": 470,
+      "width": 120,
+      "height": 60,
+      "text": "# Prompts\n\nTemplate processing"
+    },
+    {
+      "id": "external_tools",
+      "type": "text",
+      "x": 340,
+      "y": 870,
+      "width": 120,
+      "height": 60,
+      "text": "# External Tools\n\nSecurity tool integration"
+    },
+    {
+      "id": "mcp",
+      "type": "text",
+      "x": 140,
+      "y": 870,
+      "width": 120,
+      "height": 60,
+      "text": "# MCP Server\n\nProtocol integration"
+    },
+    {
+      "id": "audit",
+      "type": "text",
+      "x": 240,
+      "y": 270,
+      "width": 120,
+      "height": 60,
+      "text": "# Audit System\n\nLogging and metrics"
+    },
+    {
+      "id": "deliverables",
+      "type": "text",
+      "x": 540,
+      "y": 870,
+      "width": 120,
+      "height": 60,
+      "text": "# Deliverables\n\nReport generation"
+    },
+    {
+      "id": "error_handling",
+      "type": "text",
+      "x": 440,
+      "y": 270,
+      "width": 120,
+      "height": 60,
+      "text": "# Error Handling\n\nRecovery and retry logic"
+    }
+  ],
+  "edges": [
+    {
+      "id": "cli_configures_config",
+      "fromNode": "cli",
+      "toNode": "config",
+      "pv": {
+        "edgeType": "configures"
+      }
+    },
+    {
+      "id": "cli_orchestrates_session",
+      "fromNode": "cli",
+      "toNode": "session",
+      "pv": {
+        "edgeType": "orchestrates"
+      }
+    },
+    {
+      "id": "cli_orchestrates_pipeline",
+      "fromNode": "cli",
+      "toNode": "pipeline",
+      "pv": {
+        "edgeType": "orchestrates"
+      }
+    },
+    {
+      "id": "session_persists_checkpoint",
+      "fromNode": "session",
+      "toNode": "checkpoint",
+      "pv": {
+        "edgeType": "persists"
+      }
+    },
+    {
+      "id": "pipeline_processes_ai",
+      "fromNode": "pipeline",
+      "toNode": "ai",
+      "pv": {
+        "edgeType": "processes"
+      }
+    },
+    {
+      "id": "config_prompts_prompts",
+      "fromNode": "config",
+      "toNode": "prompts",
+      "pv": {
+        "edgeType": "configures"
+      }
+    },
+    {
+      "id": "prompts_processes_ai",
+      "fromNode": "prompts",
+      "toNode": "ai",
+      "pv": {
+        "edgeType": "processes"
+      }
+    },
+    {
+      "id": "ai_integrates_external_tools",
+      "fromNode": "ai",
+      "toNode": "external_tools",
+      "pv": {
+        "edgeType": "integrates"
+      }
+    },
+    {
+      "id": "ai_integrates_mcp",
+      "fromNode": "ai",
+      "toNode": "mcp",
+      "pv": {
+        "edgeType": "integrates"
+      }
+    },
+    {
+      "id": "pipeline_integrates_external_tools",
+      "fromNode": "pipeline",
+      "toNode": "external_tools",
+      "pv": {
+        "edgeType": "integrates"
+      }
+    },
+    {
+      "id": "audit_observes_ai",
+      "fromNode": "audit",
+      "toNode": "ai",
+      "pv": {
+        "edgeType": "observes"
+      }
+    },
+    {
+      "id": "audit_observes_pipeline",
+      "fromNode": "audit",
+      "toNode": "pipeline",
+      "pv": {
+        "edgeType": "observes"
+      }
+    },
+    {
+      "id": "ai_outputs_deliverables",
+      "fromNode": "ai",
+      "toNode": "deliverables",
+      "pv": {
+        "edgeType": "outputs"
+      }
+    },
+    {
+      "id": "checkpoint_recovers_session",
+      "fromNode": "checkpoint",
+      "toNode": "session",
+      "pv": {
+        "edgeType": "recovers"
+      }
+    },
+    {
+      "id": "error_handling_recovers_ai",
+      "fromNode": "error_handling",
+      "toNode": "ai",
+      "pv": {
+        "edgeType": "recovers"
+      }
+    },
+    {
+      "id": "error_handling_recovers_pipeline",
+      "fromNode": "error_handling",
+      "toNode": "pipeline",
+      "pv": {
+        "edgeType": "recovers"
+      }
+    },
+    {
+      "id": "session_validates_deliverables",
+      "fromNode": "session",
+      "toNode": "deliverables",
+      "pv": {
+        "edgeType": "validates"
+      }
+    },
+    {
+      "id": "pipeline_checkpoints_checkpoint",
+      "fromNode": "pipeline",
+      "toNode": "checkpoint",
+      "pv": {
+        "edgeType": "checkpoints"
+      }
+    },
+    {
+      "id": "external_tools_validates_pipeline",
+      "fromNode": "external_tools",
+      "toNode": "pipeline",
+      "pv": {
+        "edgeType": "validates"
+      }
+    }
+  ]
+}

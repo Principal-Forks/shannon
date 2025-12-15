@@ -1,0 +1,168 @@
+version: "1.0.0"
+name: "Shannon Architecture Library"
+
+nodeComponents:
+  cli:
+    description: "Main entry point and orchestration layer"
+    defaultLabel: "CLI Interface"
+    shape: "rectangle"
+    color: "#4A90E2"
+    tags: ["interface", "entry-point"]
+      
+  config:
+    description: "YAML configuration parsing and validation"
+    defaultLabel: "Configuration Engine"
+    shape: "rectangle"
+    color: "#7B68EE"
+    tags: ["processing", "configuration"]
+      
+  session:
+    description: "Persistent session state and agent lifecycle management"
+    defaultLabel: "Session Manager"
+    shape: "rectangle"
+    color: "#50C878"
+    tags: ["state", "management"]
+      
+  checkpoint:
+    description: "Git-based checkpointing and rollback functionality"
+    defaultLabel: "Checkpoint System"
+    shape: "rectangle"
+    color: "#FF6347"
+    tags: ["state", "recovery"]
+      
+  pipeline:
+    description: "Structured penetration testing workflow"
+    defaultLabel: "Five-Phase Pipeline"
+    shape: "rectangle"
+    color: "#FFD700"
+    tags: ["processing", "workflow"]
+      
+  ai:
+    description: "Claude SDK integration with autonomous execution"
+    defaultLabel: "AI Agent Engine"
+    shape: "rectangle"
+    color: "#9370DB"
+    tags: ["processing", "ai"]
+      
+  external_tools:
+    description: "Security tool integration and validation"
+    defaultLabel: "External Tools"
+    shape: "rectangle"
+    color: "#20B2AA"
+    tags: ["integration", "tools"]
+      
+  audit:
+    description: "Crash-safe logging, metrics, and forensic tracking"
+    defaultLabel: "Audit System"
+    shape: "rectangle"
+    color: "#CD5C5C"
+    tags: ["observability", "logging"]
+      
+  mcp:
+    description: "Model Context Protocol servers for tool integration"
+    defaultLabel: "MCP Server Layer"
+    shape: "rectangle"
+    color: "#FF8C00"
+    tags: ["integration", "protocol"]
+      
+  prompts:
+    description: "Template processing and variable interpolation"
+    defaultLabel: "Prompt Manager"
+    shape: "rectangle"
+    color: "#4682B4"
+    tags: ["processing", "templates"]
+      
+  deliverables:
+    description: "Output generation and report assembly"
+    defaultLabel: "Deliverables Engine"
+    shape: "rectangle"
+    color: "#32CD32"
+    tags: ["output", "reports"]
+      
+  error_handling:
+    description: "Comprehensive error management and retry logic"
+    defaultLabel: "Error Handling & Recovery"
+    shape: "rectangle"
+    color: "#DC143C"
+    tags: ["resilience", "errors"]
+
+edgeComponents:
+  orchestrates:
+    description: "Component coordinates and controls execution of"
+    directed: true
+    color: "#4A90E2"
+    style: "solid"
+    width: 2
+    label: "orchestrates"
+    
+  configures:
+    description: "Component provides configuration to"
+    directed: true
+    color: "#7B68EE"
+    style: "solid"
+    width: 2
+    label: "configures"
+    
+  persists:
+    description: "Component saves state to"
+    directed: true
+    color: "#50C878"
+    style: "solid"
+    width: 2
+    label: "persists"
+    
+  checkpoints:
+    description: "Component creates restore points in"
+    directed: true
+    color: "#FF6347"
+    style: "dashed"
+    width: 2
+    label: "checkpoints"
+    
+  validates:
+    description: "Component checks and validates"
+    directed: true
+    color: "#FFD700"
+    style: "solid"
+    width: 2
+    label: "validates"
+    
+  observes:
+    description: "Component monitors and logs activities of"
+    directed: true
+    color: "#CD5C5C"
+    style: "dotted"
+    width: 2
+    label: "observes"
+    
+  integrates:
+    description: "Component connects and communicates with"
+    directed: true
+    color: "#20B2AA"
+    style: "solid"
+    width: 2
+    label: "integrates"
+    
+  processes:
+    description: "Component transforms and handles"
+    directed: true
+    color: "#9370DB"
+    style: "solid"
+    width: 2
+    label: "processes"
+    
+  outputs:
+    description: "Component generates results to"
+    directed: true
+    color: "#32CD32"
+    style: "solid"
+    width: 2
+    label: "outputs"
+    
+  recovers:
+    description: "Component provides recovery capabilities for"
+    directed: true
+    color: "#DC143C"
+    style: "dashed"
+    width: 2
+    label: "recovers"
